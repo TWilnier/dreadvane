@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dreadvane — Official Website</title>
+  <meta name="description" content="Official website of Dreadvane. Raw heavy metal with roots in the early British NWOBHM tradition." />
+  <style>
+    :root{
+      --bg:#06080b;
+      --bg-2:#0c1218;
+      --panel:#10151b;
+      --panel-2:#141b22;
+      --text:#eef2f5;
+      --muted:#a8b2bb;
+      --line:rgba(255,255,255,.10);
+      --accent:#ff5a1f;
+      --accent-soft:rgba(255,90,31,.20);
+      --max:1100px;
+      --shadow:0 20px 60px rgba(0,0,0,.45);
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      color:var(--text);
+      font-family:Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(circle at 78% 22%, rgba(255,90,31,.12), transparent 20%),
+        radial-gradient(circle at 22% 0%, rgba(102,173,255,.08), transparent 25%),
+        linear-gradient(180deg, #07090c 0%, #0b1015 45%, #06080b 100%);
+      line-height:1.6;
+    }
+
+    a{color:inherit}
+    img{display:block; max-width:100%}
+
+    .wrap{
+      width:min(var(--max), calc(100% - 32px));
+      margin:0 auto;
+    }
+
+    .topbar{
+      position:sticky;
+      top:0;
+      z-index:10;
+      backdrop-filter: blur(10px);
+      background:rgba(6,8,11,.78);
+      border-bottom:1px solid rgba(255,255,255,.06);
+    }
+
+    .topbar-inner{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+      min-height:70px;
+    }
+
+    .brand-mini{
+      font-weight:700;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      color:#dfe5ea;
+      font-size:.92rem;
+    }
+
+    .nav{
+      display:flex;
+      gap:18px;
+      flex-wrap:wrap;
+      font-size:.95rem;
+      color:var(--muted);
+    }
+
+    .nav a{
+      text-decoration:none;
+    }
+
+    .hero{
+      padding:44px 0 56px;
+    }
+
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap:38px;
+      align-items:center;
+    }
+
+    .hero-copy{
+      padding:20px 0;
+    }
+
+    .eyebrow{
+      display:inline-block;
+      margin-bottom:18px;
+      padding:7px 12px;
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:999px;
+      font-size:.78rem;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      color:#d7dee4;
+      background:rgba(255,255,255,.03);
+    }
+
+    .hero-logo{
+      width:min(760px, 100%);
+      margin:0 0 18px;
+      filter: drop-shadow(0 8px 24px rgba(0,0,0,.45));
+    }
+
+    .hero-text{
+      font-size:1.08rem;
+      color:#d4dce2;
+      max-width:720px;
+      margin:0 0 24px;
+    }
+
+    .hero-meta{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top:18px;
+    }
+
+    .pill{
+      padding:10px 14px;
+      border-radius:999px;
+      background:rgba(255,255,255,.04);
+      border:1px solid rgba(255,255,255,.08);
+      color:#dfe4e8;
+      font-size:.92rem;
+    }
+
+    .hero-card{
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02)),
+        var(--panel);
+      border:1px solid var(--line);
+      border-radius:24px;
+      padding:18px;
+      box-shadow:var(--shadow);
+    }
+
+    .cover-frame{
+      position:relative;
+      border-radius:18px;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,.08);
+      box-shadow:0 18px 35px rgba(0,0,0,.36);
+    }
+
+    .cover-frame img{
+      width:100%;
+      aspect-ratio:1/1;
+      object-fit:cover;
+    }
+
+    .section{
+      padding:22px 0 44px;
+    }
+
+    .section-title{
+      font-size:.84rem;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      color:#aeb7bf;
+      margin:0 0 14px;
+    }
+
+    .card{
+      background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+      border:1px solid var(--line);
+      border-radius:24px;
+      padding:30px;
+      box-shadow:var(--shadow);
+    }
+
+    .release-grid{
+      display:grid;
+      grid-template-columns: 290px 1fr;
+      gap:28px;
+      align-items:center;
+    }
+
+    .meta{
+      color:var(--muted);
+      text-transform:uppercase;
+      letter-spacing:.12em;
+      font-size:.8rem;
+      margin-bottom:10px;
+    }
+
+    h1,h2,h3,p{margin-top:0}
+    h2.release-name{
+      font-size:clamp(2rem, 3vw, 3rem);
+      line-height:1.05;
+      margin-bottom:14px;
+      letter-spacing:.02em;
+    }
+
+    .lead{
+      color:#d6dde3;
+      font-size:1.05rem;
+      margin-bottom:18px;
+    }
+
+    .cta-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top:14px;
+    }
+
+    .button{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:44px;
+      padding:0 18px;
+      border-radius:999px;
+      text-decoration:none;
+      font-weight:700;
+      border:1px solid transparent;
+    }
+
+    .button.primary{
+      background:linear-gradient(180deg, #ff6a30, #d64714);
+      color:white;
+      box-shadow:0 10px 26px rgba(214,71,20,.35);
+    }
+
+    .button.ghost{
+      border-color:rgba(255,255,255,.12);
+      color:#e6ecef;
+      background:rgba(255,255,255,.03);
+    }
+
+    .columns{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:24px;
+    }
+
+    .info-block h3{
+      margin-bottom:10px;
+      font-size:1.2rem;
+    }
+
+    .info-block p{
+      color:#d3dbe2;
+      margin-bottom:0;
+    }
+
+    .contact-grid{
+      display:grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap:24px;
+    }
+
+    .contact-details{
+      display:grid;
+      gap:12px;
+      color:#dbe1e6;
+    }
+
+    .contact-line{
+      padding:14px 16px;
+      border-radius:16px;
+      background:rgba(255,255,255,.03);
+      border:1px solid rgba(255,255,255,.08);
+    }
+
+    footer{
+      padding:26px 0 40px;
+      color:#89939b;
+      font-size:.9rem;
+    }
+
+    .accent{
+      color:#ffd1c2;
+    }
+
+    @media (max-width: 900px){
+      .hero-grid,
+      .release-grid,
+      .columns,
+      .contact-grid{
+        grid-template-columns:1fr;
+      }
+
+      .hero{
+        padding-top:28px;
+      }
+
+      .card{
+        padding:22px;
+      }
+    }
+
+    @media (max-width: 600px){
+      .topbar-inner{
+        align-items:flex-start;
+        justify-content:flex-start;
+        flex-direction:column;
+        padding:12px 0;
+      }
+
+      .nav{
+        gap:12px;
+      }
+
+      .hero-logo{
+        width:100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <div class="brand-mini">Dreadvane</div>
+      <nav class="nav">
+        <a href="#release">Latest release</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow">Official artist website</div>
+          <img class="hero-logo" src="dreadvane-logo.png" alt="Dreadvane logo" />
+          <p class="hero-text">
+            Raw heavy metal with roots in the early British NWOBHM tradition —
+            guitar-driven, historically grounded, and built around human stories
+            inside catastrophe, conflict, loyalty and defiance.
+          </p>
+          <div class="hero-meta">
+            <span class="pill">Heavy Metal</span>
+            <span class="pill">NWOBHM-inspired</span>
+            <span class="pill">Signal Bureau Records</span>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <div class="cover-frame">
+            <img src="reactor-four-cover.png" alt="Cover artwork for 1:23 (Reactor Four)" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="release" class="section">
+      <div class="wrap">
+        <div class="section-title">Latest release</div>
+        <div class="card release-grid">
+          <div class="cover-frame">
+            <img src="reactor-four-cover.png" alt="Dreadvane – 1:23 (Reactor Four)" />
+          </div>
+          <div>
+            <div class="meta">Debut single · 20 November 2026</div>
+            <h2 class="release-name">1:23 (Reactor Four)</h2>
+            <p class="lead">
+              A dark, historically grounded heavy-metal single inspired by the
+              Chernobyl disaster — industrial ruin, human fear and the final
+              moments before catastrophe becomes irreversible.
+            </p>
+            <div class="cta-row">
+              <span class="button primary">Dreadvane</span>
+              <span class="button ghost">Official release artwork</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="wrap">
+        <div class="section-title">About</div>
+        <div class="card columns">
+          <div class="info-block">
+            <h3>About Dreadvane</h3>
+            <p>
+              Dreadvane is a heavy-metal project built around raw early-1980s
+              energy, twin-guitar attack, galloping bass and direct songwriting.
+              The music favors weight, tension and clarity over polish.
+            </p>
+          </div>
+          <div class="info-block">
+            <h3>The songs</h3>
+            <p>
+              The songs focus on people caught inside historical, military and
+              industrial events — less fantasy, more consequence. The aim is
+              heavy metal with atmosphere, urgency and a strong human center.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="wrap">
+        <div class="section-title">Contact</div>
+        <div class="card contact-grid">
+          <div>
+            <h3>Official contact</h3>
+            <p class="lead">
+              This public contact information is provided for artist identity,
+              release administration and Spotify for Artists verification.
+            </p>
+          </div>
+          <div class="contact-details">
+            <div class="contact-line"><strong>Artist:</strong> Dreadvane</div>
+            <div class="contact-line"><strong>Representative:</strong> Tobias Wilnier</div>
+            <div class="contact-line"><strong>Email:</strong> <a class="accent" href="mailto:dreadvane.music@gmail.com">dreadvane.music@gmail.com</a></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      © 2026 Dreadvane · Signal Bureau Records
+    </div>
+  </footer>
+</body>
+</html>
