@@ -1,21 +1,19 @@
-DREADVANE WEBSITE — STYLED VERSION
+DREADVANE WEBSITE — FINAL VERSION
 
-Files included:
+Upload/replace these three files in the ROOT of TWilnier/dreadvane:
 - index.html
-- dreadvane-logo.png
+- dreadvane-logo-silver.png
 - reactor-four-cover.png
 
-How to update GitHub Pages:
-1. Open your GitHub repository: TWilnier/dreadvane
-2. Delete or replace the current index.html
-3. Upload these three files to the root of the repository
-4. Wait 1–2 minutes and refresh:
-   https://twilnier.github.io/dreadvane/
+You can leave README.md in the repository.
 
-If GitHub still shows the old version, hard refresh the page (Ctrl+F5).
+After committing, GitHub Pages will update automatically:
+https://twilnier.github.io/dreadvane/
 
-This version already includes:
-- Dreadvane logo
-- 1:23 (Reactor Four) cover
-- Tobias Wilnier
-- dreadvane.music@gmail.com
+If you still see the old version, use Ctrl+F5.
+
+Final changes:
+- Silver distressed Dreadvane logo in hero
+- Removed non-functional fake buttons
+- Reworded Contact section to natural public-facing copy
+- Kept Tobias Wilnier + dreadvane.music@gmail.com clearly visible

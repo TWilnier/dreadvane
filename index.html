@@ -109,7 +109,8 @@
     .hero-logo{
       width:min(760px, 100%);
       margin:0 0 18px;
-      filter: drop-shadow(0 8px 24px rgba(0,0,0,.45));
+      mix-blend-mode:screen;
+      filter: drop-shadow(0 10px 28px rgba(0,0,0,.55));
     }
 
     .hero-text{
@@ -206,37 +207,6 @@
       color:#d6dde3;
       font-size:1.05rem;
       margin-bottom:18px;
-    }
-
-    .cta-row{
-      display:flex;
-      flex-wrap:wrap;
-      gap:12px;
-      margin-top:14px;
-    }
-
-    .button{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      min-height:44px;
-      padding:0 18px;
-      border-radius:999px;
-      text-decoration:none;
-      font-weight:700;
-      border:1px solid transparent;
-    }
-
-    .button.primary{
-      background:linear-gradient(180deg, #ff6a30, #d64714);
-      color:white;
-      box-shadow:0 10px 26px rgba(214,71,20,.35);
-    }
-
-    .button.ghost{
-      border-color:rgba(255,255,255,.12);
-      color:#e6ecef;
-      background:rgba(255,255,255,.03);
     }
 
     .columns{
@@ -336,7 +306,7 @@
       <div class="wrap hero-grid">
         <div class="hero-copy">
           <div class="eyebrow">Official artist website</div>
-          <img class="hero-logo" src="dreadvane-logo.png" alt="Dreadvane logo" />
+          <img class="hero-logo" src="dreadvane-logo-silver.png" alt="Dreadvane logo" />
           <p class="hero-text">
             Raw heavy metal with roots in the early British NWOBHM tradition —
             guitar-driven, historically grounded, and built around human stories
@@ -372,10 +342,6 @@
               Chernobyl disaster — industrial ruin, human fear and the final
               moments before catastrophe becomes irreversible.
             </p>
-            <div class="cta-row">
-              <span class="button primary">Dreadvane</span>
-              <span class="button ghost">Official release artwork</span>
-            </div>
           </div>
         </div>
       </div>
@@ -412,8 +378,7 @@
           <div>
             <h3>Official contact</h3>
             <p class="lead">
-              This public contact information is provided for artist identity,
-              release administration and Spotify for Artists verification.
+              For press, releases, licensing and general enquiries.
             </p>
           </div>
           <div class="contact-details">
